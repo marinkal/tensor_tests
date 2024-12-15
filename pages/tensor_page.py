@@ -3,8 +3,8 @@ from selenium.webdriver.common.by import By
 
 
 class TensorPage(BasePage):
-    XPATH_PEOPLE = "//div//p[contains(text(),'Сила в людях')]"
-    XPATH_DETAILS = "//div//p[contains(text(),'Сила в людях')]/following-sibling::p//a[contains(text(), 'Подробнее')]"
+    XPATH_PEOPLE = "//div/p[contains(text(),'Сила в людях')]"
+    XPATH_DETAILS = "//div/p[contains(text(),'Сила в людях')]/following-sibling::p//a[contains(text(), 'Подробнее')]"
 
     def is_people_element_present(self):
         xpath = self.XPATH_PEOPLE
