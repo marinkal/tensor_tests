@@ -4,7 +4,7 @@ from pages.contacts_page import ContactsPage
 import pytest
 
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def tensor_page_url(browser):
     url = "https://sbis.ru"
     main_page = MainPage(browser, url)
@@ -20,7 +20,7 @@ def tensor_page(browser, tensor_page_url):
     link = tensor_page_url
     page = TensorPage(browser, link)
     page.open()
-    return page
+    yield page
 
 
 def test_tensor_block_click(tensor_page_url):
