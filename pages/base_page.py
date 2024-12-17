@@ -9,10 +9,6 @@ class BasePage():
 
     def open(self):
         return self.browser.get(self.url)
-    
-    @property
-    def current_url(self):
-        return self.browser.url
 
     def is_element_present(self, by, what):
         try:
