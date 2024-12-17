@@ -1,5 +1,7 @@
 from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 class TensorPage(BasePage):
@@ -15,7 +17,10 @@ class TensorPage(BasePage):
         return self.is_element_present(By.XPATH, xpath)
 
     def get_datails_url(self):
-        elem = self.browser.find_element(By.XPATH, self.XPATH_DETAILS)
+        elem = WebDriverWait(self.browser, 10).until(
+            EC.element_to_be_clickable((By.XPATH, self.XPATH_DETAILS))
+        )
+
         elem.click()
         return self.browser.current_url
 
