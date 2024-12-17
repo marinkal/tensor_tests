@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 
 class MainPage(BasePage):
-    def get_url_go_to_contacts_page(self):
+    def get_url_go_to_contacts_page(self) -> str:
         contact_menu_item = WebDriverWait(self.browser, 10).until(
             EC.element_to_be_clickable((By.CSS_SELECTOR,
                                         ".js-ContactsMenu>div"))
